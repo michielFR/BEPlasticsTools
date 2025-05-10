@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>BE Plastics MFI converter</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Favicons -->
+  <link href="img/favicon.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Bootstrap CSS File -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll" href="index.html">BE Plastics tools</a>
+      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault"
+        aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>    
+    </div>
+  </nav>
+
+  <div class="intro intro-single route bg-image" style="background-image: url(img/Lake.jpg)">
+    <div class="overlay-mf"></div>
+    <div class="intro-content display-table">
+      <div class="table-cell">
+        <div class="container">
+          <h2 class="intro-title mb-2">BE Plastics MFI converter</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<section class="blog-wrapper sect-pt4" id="blog">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="post-box">      
+          <div class="post-meta">
+            <h1 class="article-title">Definieer MFI en percentage van de producten</h1>
+            <form class="mt-3"  id="productForm" onsubmit="calculateResult(event)">
+              <div id="productContainer">
+                <!-- Product Template -->
+                <div class="product-item">
+                  <div class="form-row pt-2 align-items-center">
+                    <div class="col-md-3 d-flex align-items-center">
+                      <label for="productValue" class="mr-2 mb-0">MFI</label>
+                      <input type="number" class="form-control" name="productValue[]" placeholder="MFI" step="any" required>
+                    </div>
+                    <div class="col-md-3 d-flex align-items-center">
+                      <label for="productPercentage" class="mr-2 mb-0">Percentage</label>
+                      <input type="number" class="form-control" name="productPercentage[]" placeholder="Percentage" step="any" required>
+                    </div>
+                    <div class="col text-right">
+                      <button type="button" class="btn btn-danger btn-sm delete-product" onclick="deleteProduct(this)" disabled>
+                        <i class="fa fa-trash"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-row mt-3 pt-3 d-flex justify-content-between">
+                <button type="button" class="btn btn-primary btn" onclick="addProduct()">
+                  <i class="fa fa-plus"></i> Voeg product toe
+                </button>
+                <button type="submit" class="btn btn-success btn">
+                  <i class="fa fa-calculator"></i> Bereken
+                </button>
+              </div>
+            </form>
+            <div id="result" class="mt-3">
+              <!-- Result will be displayed here -->
+            </div>
+        </div>          
+      </div>    
+    </div>
+  </div>
+</section>
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+  <div id="preloader"></div>
+
+  <!-- JavaScript Libraries -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/jquery/jquery-migrate.min.js"></script>
+  <script src="lib/popper/popper.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/counterup/jquery.waypoints.min.js"></script>
+  <script src="lib/counterup/jquery.counterup.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="lib/lightbox/js/lightbox.min.js"></script>
+  <script src="lib/typed/typed.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/gqilfwkjbnqlfwhxucbhql.js"></script>
+</body>
+</html>
