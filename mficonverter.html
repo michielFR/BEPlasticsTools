@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>BE Plastics MFI converter</title>
@@ -21,6 +22,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
   <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
   <!-- Main Stylesheet File -->
   <link href="css/style.css" rel="stylesheet">
@@ -35,7 +37,7 @@
         <span></span>
         <span></span>
         <span></span>
-      </button>    
+      </button>
     </div>
   </nav>
 
@@ -50,51 +52,71 @@
     </div>
   </div>
 
-<section class="blog-wrapper sect-pt4" id="blog">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="post-box">      
-          <div class="post-meta">
-            <h1 class="article-title">Definieer MFI en percentage van de producten</h1>
-            <form class="mt-3"  id="productForm" onsubmit="calculateResult(event)">
-              <div id="productContainer">
-                <!-- Product Template -->
-                <div class="product-item">
-                  <div class="form-row pt-2 align-items-center">
-                    <div class="col-md-3 d-flex align-items-center">
-                      <label for="productValue" class="mr-2 mb-0">MFI</label>
-                      <input type="number" class="form-control" name="productValue[]" placeholder="MFI" step="any" required>
-                    </div>
-                    <div class="col-md-3 d-flex align-items-center">
-                      <label for="productPercentage" class="mr-2 mb-0">Percentage</label>
-                      <input type="number" class="form-control" name="productPercentage[]" placeholder="Percentage" step="any" required>
-                    </div>
-                    <div class="col text-right">
-                      <button type="button" class="btn btn-danger btn-sm delete-product" onclick="deleteProduct(this)" disabled>
-                        <i class="fa fa-trash"></i>
-                      </button>
-                    </div>
+  <section class="blog-wrapper sect-pt4" id="blog">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="post-box">
+            <div class="post-meta">
+              <div class="row">
+                <div class="col-8">
+                  <h1 class="article-title" id="action-title">Definieer MFI en aantal collies van de producten</h1>
+                </div>
+                <div class="col-4 text-right">
+                  <div class="btn-group" role="group" aria-label="Toggle Collie/Percentage">
+                    <button type="button" id="collieBtn" class="btn btn-outline-primary active"
+                      onclick="toggleMode('collie')">Collie</button>
+                    <button type="button" id="percentageBtn" class="btn btn-outline-primary"
+                      onclick="toggleMode('percentage')">Percentage</button>
                   </div>
                 </div>
               </div>
-              <div class="form-row mt-3 pt-3 d-flex justify-content-between">
-                <button type="button" class="btn btn-primary btn" onclick="addProduct()">
-                  <i class="fa fa-plus"></i> Voeg product toe
-                </button>
-                <button type="submit" class="btn btn-success btn">
-                  <i class="fa fa-calculator"></i> Bereken
-                </button>
+              <form class="mt-3" id="productForm" onsubmit="calculateResult(event)">
+                <div id="productContainer">
+                  <!-- Product Template -->
+                  <div class="product-item">
+                    <div class="form-row pt-2 align-items-center">
+                      <div class="col-md-3 d-flex align-items-center">
+                        <label for="productValue" class="mr-2 mb-0">MFI</label>
+                        <input type="number" class="form-control" name="productValue[]" placeholder="MFI" step="any"
+                          required>
+                      </div>
+                      <div class="col-md-3 d-flex align-items-center">
+                        <label for="collieQuantity" class="mr-2 mb-0">Collies</label>
+                        <input type="number" class="form-control collie-input" name="collieQuantities[]"
+                          placeholder="Collies" step="any" required>
+                      </div>
+                      <div class="col-md-3 d-flex align-items-center">
+                        <label for="productPercentage" class="mr-2 mb-0">Percentage</label>
+                        <input type="number" class="form-control percentage-input" name="productPercentage[]"
+                          placeholder="Percentage" step="any" required disabled>
+                      </div>
+                      <div class="col text-right">
+                        <button type="button" class="btn btn-danger btn-sm delete-product" onclick="deleteProduct(this)"
+                          disabled>
+                          <i class="fa fa-trash"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-row mt-3 pt-3 d-flex justify-content-between">
+                  <button type="button" class="btn btn-primary btn" onclick="addProduct()">
+                    <i class="fa fa-plus"></i> Voeg product toe
+                  </button>
+                  <button type="submit" class="btn btn-success btn">
+                    <i class="fa fa-calculator"></i> Bereken
+                  </button>
+                </div>
+              </form>
+              <div id="result" class="mt-3">
+                <!-- Result will be displayed here -->
               </div>
-            </form>
-            <div id="result" class="mt-3">
-              <!-- Result will be displayed here -->
             </div>
-        </div>          
-      </div>    
-    </div>
-  </div>
-</section>
+          </div>
+        </div>
+      </div>
+  </section>
 
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
   <div id="preloader"></div>
@@ -113,4 +135,5 @@
   <script src="js/main.js"></script>
   <script src="js/gqilfwkjbnqlfwhxucbhql.js"></script>
 </body>
+
 </html>
