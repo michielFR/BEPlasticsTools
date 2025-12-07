@@ -63,9 +63,9 @@ function calculateResult(event) {
   const collieQuantities = document.getElementsByName('collieQuantities[]');
   const productPercentages = document.getElementsByName('productPercentage[]');
   var productPercentageValues = Array(productValues.length).fill(0);
+  var totalCollies = 0;
 
   if (calculationMode === 'collie') {
-    let totalCollies = 0;
     for (let i = 0; i < collieQuantities.length; i++) {
       const quantity = parseFloat(collieQuantities[i].value);
       if (isNaN(quantity)) {
@@ -117,7 +117,7 @@ function calculateResult(event) {
 
   // Display the result
   const resultDiv = document.getElementById('result');
-  resultDiv.innerHTML = `<p><strong>Resultaat:</strong> ${reversedLog.toFixed(2)}</p>`;
+  resultDiv.innerHTML = `<p><strong>Resultaat:</strong> ${reversedLog.toFixed(2)} ${(calculationMode === 'collie' ? ' - <strong>Collies:</strong> ' +  totalCollies : '')}</p>`;
 
   if (calculationMode === 'collie') {
     const $percentageInputs = $('.percentage-input');
